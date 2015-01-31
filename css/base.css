@@ -176,7 +176,7 @@ section {
   color: #0c1e29;
 }
 section .text-center {
-  padding: 25px 0 10px 0;
+  padding: 25px 0 20px 0;
 }
 @media (min-width: 768px) {
   section .text-center {
@@ -212,7 +212,7 @@ section.register .text-center {
   position: relative;
   padding-right: 0;
   padding-left: 0;
-  font-size: 0.8em;
+  font-size: 1em;
   box-shadow: none !important;
   resize: none;
 }
@@ -222,7 +222,7 @@ section.register .text-center {
   position: relative;
   top: 2em;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 1em;
   line-height: 1.764705882em;
   vertical-align: middle;
   vertical-align: baseline;
