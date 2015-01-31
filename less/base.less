@@ -1,0 +1,344 @@
+@import "var.less";
+
+body {
+	overflow-x: hidden;
+    background-color: @color-background;
+}
+
+p {
+	font-size: @font-mob-text;
+}
+
+@media(min-width:768px) {
+    p {
+        font-size: @font-text;
+    }
+}
+
+a,
+a:hover,
+a:focus,
+a.active {
+	color: @color-blocks;
+	outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+hr.wrench-blocks,
+hr.wrench {
+    padding: 0;
+    border: none;
+    border-top: solid 5px;
+    text-align: center;
+    max-width: 250px;
+    margin: 25px auto 30px;
+}
+
+hr.wrench-blocks:after,
+hr.wrench:after {
+    content: "\f0ad";
+    font-family: FontAwesome;
+    display: inline-block;
+    position: relative; 
+    top: -0.8em;  
+    font-size: @font-mob-text;
+    padding: 0 0.40em;
+}
+
+hr.wrench-blocks {
+    border-color: @color-background;
+}
+
+hr.wrench-blocks:after {
+    background-color: @color-blocks;
+    color: @color-background;
+}
+
+hr.wrench {
+    border-color: @color-text;
+}
+
+hr.wrench:after {
+    background-color: @color-background;
+    color: @color-text;
+}
+
+@media(min-width:768px) {
+    hr.wrench-blocks:after,
+    hr.wrench:after {
+        font-size: @font-text;
+    }
+}
+
+.navbar {
+    background-color: @color-selection;
+    color: @color-background;
+    //
+	font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+    //
+    .navbar-brand {
+        color: @color-background;
+    }
+    .navbar-brand:focus {
+        color: @color-background;
+    }
+    .navbar-brand:hover {
+        color: @color-background;
+        background-color: @color-blocks;
+    }
+    //
+	a:focus {
+		outline: none;
+	}
+	.navbar-nav {
+		letter-spacing: 1px;
+        font-size: @font-mob-navigation;
+        .active {
+            a, a:hover, a:focus {
+                color: @color-background;
+                background-color: @color-blocks;
+            }
+        }
+		li {
+            a, a:focus {
+                color: @color-background;
+            }
+            a:hover {
+                color: @color-background;
+                background-color: @color-blocks;
+            }
+		}
+	}
+    .navbar-header .navbar-toggle {
+        border-color: @color-background;
+    }
+}
+
+
+.navbar-default,
+.navbar-inverse {
+	border: none;
+}
+
+@media(min-width:768px) {
+	.navbar .navbar-nav {
+        font-size: @font-navigation;
+        .active {
+            a, a:hover, a:focus {
+                color: @color-background;
+                background-color: @color-blocks;
+            }
+        }
+		li {
+            a, a:focus {
+                color: @color-background;
+                background-color: @color-selection;
+            }
+            a:hover {
+                color: @color-background;
+                background-color: @color-blocks;
+            }
+		}
+	}
+}
+
+header {
+	text-align: center;
+	background: @color-background;
+	color: @color-text;
+	.container {
+		padding-top: 80px;
+		padding-bottom: 20px;
+	}
+	.intro-text {
+		.name {
+			display: block;
+			font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: @font-mob-brand;
+		}
+		.descr {
+			font-size: @font-mob-text;
+			font-weight: 300;
+		}
+		.phone {
+			display: block;
+			font-size: @font-mob-phone;
+			font-weight: 700;
+		}
+	}
+}
+
+@media(min-width:768px) {
+	header {
+		.container {
+			padding-top: 140px;
+			padding-bottom: 30px;
+		}
+		.intro-text {
+			.name {
+				font-size: @font-brand;
+			}
+			.descr {
+				font-size: @font-text;
+			}
+			.phone {
+				font-size: @font-phone;
+			}
+		}
+	}
+}
+
+section {
+	background: @color-background;
+	color: @color-text;
+    .text-center{
+        padding: 25px 0 10px 0;
+    }
+}
+
+@media(min-width:768px) {
+	section {
+        .text-center {
+            padding: 70px 0;
+        }
+	}
+}
+
+section.promotion,
+section.register {
+	background: @color-blocks;
+	color: @color-background;
+    a,
+    a:hover,
+    a:focus,
+    a.active {
+        color: @color-background;
+    }
+}
+
+section.register {
+    .text-center {
+        padding-bottom: 0px;
+    }
+}
+
+.floating-label-form-group {
+    position: relative;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+    input,
+    textarea {
+	    z-index: 1;
+	    position: relative;
+	    padding-right: 0;
+	    padding-left: 0;
+	    font-size: @font-mob-labels;
+	    box-shadow: none !important;
+	    resize: none;
+    }
+    label {
+	    display: block;
+	    z-index: 0;
+	    position: relative;
+	    top: 2em;
+	    margin: 0;
+	    font-size: @font-mob-labels;
+	    line-height: 1.764705882em;
+	    vertical-align: middle;
+	    vertical-align: baseline;
+	    opacity: 0;
+	    -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+	    -moz-transition: top 0.3s ease,opacity 0.3s ease;
+	    -ms-transition: top 0.3s ease,opacity 0.3s ease;
+	    transition: top 0.3s ease,opacity 0.3s ease;
+    }
+    &::not(:first-child) {
+	    padding-left: 14px;
+    }
+}
+
+.floating-label-form-group-with-value {
+	label {
+	    top: 0;
+	    opacity: 1;
+	}
+}
+
+@media(min-width:768px) {
+    .floating-label-form-group {
+        input,
+        textarea {
+            font-size: @font-labels;
+        }
+        label {
+            font-size: @font-labels;
+        }
+    }
+}
+
+section.contacts {
+	background: @color-background;
+	color: @color-text;
+    padding-bottom: 15px;
+    .descr {
+        font-size: @font-mob-text;
+        font-weight: 300;
+    }
+    .phone {
+        display: block;
+        font-size: @font-mob-phone;
+        font-weight: 700;
+    }
+    .ymap {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.contact-form {
+    .text-center {
+        padding-top: 0;
+    }
+    padding-bottom: 20px;
+    button {
+        color: @color-background;
+        background-color: @color-selection;
+        border-color: @color-selection;
+    }
+}
+
+@media(min-width:768px) {
+	section.contacts {
+        padding-bottom: 25px;
+        .descr {
+            font-size: @font-text;
+        }
+        .phone {
+            font-size: @font-phone;
+        }
+        .ymap {
+            height: 400px;
+        }
+    }
+}
+
+footer {
+    padding: 20px 0;
+	color: @color-background;
+    background-color: @color-selection;
+}
+
+.btn:focus,
+.btn:active,
+.btn.active {
+	outline: none;
+}
