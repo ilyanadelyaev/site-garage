@@ -54,7 +54,7 @@ $(document).ready(function() {
 
         myPlacemark = new ymaps.Placemark([59.904154, 30.354481], {
             hintContent: 'СТО Волковская',
-            balloonContentHeader: 'СТО Волковская',
+            balloonContentHeader: '<i class="fa fa-wrench"></i> СТО Волковская',
             balloonContentBody: 'СПб, ул. Камчатская, д. 5 <br> <b>8 (812) 600-40-33</b>',
             balloonContentFooter: 'с 09:00 до 21:00'
         });
