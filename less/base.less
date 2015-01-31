@@ -263,6 +263,7 @@ section.register {
     }
     .help-block {
         color: @color-background;
+        font-size: @font-mob-labels;
     }
     &::not(:first-child) {
 	    padding-left: 14px;
@@ -279,10 +280,9 @@ section.register {
 @media(min-width:768px) {
     .floating-label-form-group {
         input,
-        textarea {
-            font-size: @font-labels;
-        }
-        label {
+        textarea,
+        label,
+        .help-block {
             font-size: @font-labels;
         }
     }
