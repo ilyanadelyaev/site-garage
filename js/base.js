@@ -4,7 +4,7 @@ $(function() {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top - $('.navbar-header').height() + 2
-        }, 1500, 'easeInOutExpo');
+        }, 500, 'easeInOutExpo');
         event.preventDefault();
     });
 });
