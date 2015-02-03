@@ -45,8 +45,8 @@ $(document).ready(function() {
 $(document).ready(function() {
     function init(){ 
         var map = new ymaps.Map("map", {
-            center: [59.9053, 30.354481],
-            zoom: 15,
+            center: [59.9080, 30.3480],
+            zoom: 14,
             controls: ['smallMapDefaultSet']
         });
         map.behaviors.disable('scrollZoom');
@@ -63,7 +63,7 @@ $(document).ready(function() {
             {},
             {
                 strokeWidth: 6,
-                strokeColor: '#0000ff'
+                strokeColor: '#ED4543'
             }
         );
         map.geoObjects.add(route);
