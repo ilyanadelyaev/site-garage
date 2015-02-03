@@ -229,6 +229,9 @@ section.register {
     .text-center {
         padding-bottom: 0px;
     }
+    .star_label {
+        font-size: @font-mob-labels;
+    }
 }
 
 .floating-label-form-group {
@@ -283,12 +286,21 @@ section.register {
             font-size: @font-labels;
         }
     }
+    
+    section.register {
+        .star_label {
+            font-size: @font-labels;
+        }
+    }
 }
 
 section.contacts {
 	background: @color-background;
 	color: @color-text;
     padding-bottom: 15px;
+    .text-center {
+        padding-bottom: 15px;
+    }
     .descr {
         font-size: @font-mob-text;
         font-weight: 300;
@@ -300,7 +312,7 @@ section.contacts {
     }
     .ymap {
         width: 100%;
-        height: 200px;
+        height: 250px;
     }
 }
 
@@ -319,6 +331,9 @@ section.contacts {
 @media(min-width:768px) {
 	section.contacts {
         padding-bottom: 25px;
+        .text-center {
+            padding-bottom: 30px;
+        }
         .descr {
             font-size: @font-text;
         }
