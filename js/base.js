@@ -43,26 +43,45 @@ $(document).ready(function() {
 
 // Yandex Maps API
 $(document).ready(function() {
-    ymaps.ready(init);
-    
-    var myMap, myPlacemark;
-
     function init(){ 
-        myMap = new ymaps.Map("map", {
-            center: [59.904154, 30.354481],
+        var map = new ymaps.Map("map", {
+            center: [59.9053, 30.354481],
             zoom: 15,
             controls: ['smallMapDefaultSet']
         });
+        map.behaviors.disable('scrollZoom');
 
-        myMap.behaviors.disable('scrollZoom');
+        var route = new ymaps.Polyline(
+            [
+                [59.90755, 30.3459],
+                [59.905536, 30.35426],
+                [59.90441, 30.35497],
+                [59.90409, 30.355022],
+                [59.9036, 30.354645],
+                [59.90385, 30.35365]
+            ],
+            {},
+            {
+                strokeWidth: 6,
+                strokeColor: '#0000ff'
+            }
+        );
+        map.geoObjects.add(route);
 
-        myPlacemark = new ymaps.Placemark([59.904154, 30.354481], {
-            hintContent: 'СТО Волковская',
-            balloonContentHeader: '<i class="fa fa-wrench"></i> СТО Волковская',
-            balloonContentBody: 'СПб, ул. Камчатская, д. 5 <br> <b>8 (812) 600-40-33</b>',
-            balloonContentFooter: 'с 09:00 до 21:00'
-        });
-        myMap.geoObjects.add(myPlacemark);
-
+        var place = new ymaps.Placemark(
+            [59.90385, 30.35365],
+            {
+                hintContent: 'СТО Лиговская',
+                balloonContentHeader: '<i class="fa fa-wrench"></i> СТО Лиговская',
+                balloonContentBody: 'СПб, ул. Камчатская, д. 5 <br> <b>8 (812) 600-40-33</b>',
+                balloonContentFooter: 'с 09:00 до 21:00'
+            },
+            {
+                preset: 'islands#redDotIcon'
+            }
+        );
+        map.geoObjects.add(place);
     }
+
+    ymaps.ready(init);
 });
