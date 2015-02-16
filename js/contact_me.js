@@ -9,7 +9,6 @@ $(function() {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             var name = $("input#name").val();
-            var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
@@ -18,37 +17,37 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "/mail/contact_me.php",
                 type: "POST",
                 data: {
                     name: name,
                     phone: phone,
-                    email: email,
                     message: message
                 },
                 cache: false,
                 success: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
-                    $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Ваша заявка принята!</strong>");
+                        .append("<strong>Ваша заявка принята. Спасибо!</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
-
-                    //clear all fields
+                    // hide
+                    $('#send-button').hide();
+                    $('#send-star-label').hide();
+                    // clear
                     $('#contactForm').trigger("reset");
                 },
-                error: function() {
+                error: function(jqXHR, textStatus, errorThrown) {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Простите, " + firstName + ", похоже, что я не могу обработать Вашу заявку.<br>Пожалуйста, позвоните нам по телефону: 8 (812) 600-40-33.");
+                    //$('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    //    .append("</button>");
+                    $('#success > .alert-danger').append("<strong>Простите, " + firstName + ", похоже, что у нас проблемы с сайтом.<br>Чтобы записаться, пожалуйста, позвоните по телефону: 8 (812) 600-40-33.<br>Спасибо!");
                     $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
+                    // hide
+                    $('#send-button').hide();
+                    $('#send-star-label').hide();
                 },
             })
         },
