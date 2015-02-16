@@ -32,9 +32,6 @@ $(function() {
                         .append("<strong>Ваша заявка принята. Спасибо!</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
-                    // hide
-                    $('#send-button').hide();
-                    $('#send-star-label').hide();
                     // clear
                     $('#contactForm').trigger("reset");
                 },
