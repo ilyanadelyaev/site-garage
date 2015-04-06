@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 700;
 }
 
-hr.wrench-blocks,
+hr.wrench-promo,
 hr.wrench {
     padding: 0;
     border: none;
@@ -39,7 +39,7 @@ hr.wrench {
     margin: 25px auto 30px;
 }
 
-hr.wrench-blocks:after,
+hr.wrench-promo:after,
 hr.wrench:after {
     content: "\f0ad";
     font-family: FontAwesome;
@@ -50,11 +50,11 @@ hr.wrench:after {
     padding: 0 0.40em;
 }
 
-hr.wrench-blocks {
+hr.wrench-promo {
     border-color: @color-background;
 }
 
-hr.wrench-blocks:after {
+hr.wrench-promo:after {
     background-color: @color-blocks;
     color: @color-background;
 }
@@ -69,7 +69,7 @@ hr.wrench:after {
 }
 
 @media(min-width:768px) {
-    hr.wrench-blocks:after,
+    hr.wrench-promo:after,
     hr.wrench:after {
         font-size: @font-text;
     }

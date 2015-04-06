@@ -27,7 +27,7 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
 }
-hr.wrench-blocks,
+hr.wrench-promo,
 hr.wrench {
   padding: 0;
   border: none;
@@ -36,7 +36,7 @@ hr.wrench {
   max-width: 250px;
   margin: 25px auto 30px;
 }
-hr.wrench-blocks:after,
+hr.wrench-promo:after,
 hr.wrench:after {
   content: "\f0ad";
   font-family: FontAwesome;
@@ -46,10 +46,10 @@ hr.wrench:after {
   font-size: 1.2em;
   padding: 0 0.40em;
 }
-hr.wrench-blocks {
+hr.wrench-promo {
   border-color: #fefffe;
 }
-hr.wrench-blocks:after {
+hr.wrench-promo:after {
   background-color: #509526;
   color: #fefffe;
 }
@@ -61,7 +61,7 @@ hr.wrench:after {
   color: #0c1e29;
 }
 @media (min-width: 768px) {
-  hr.wrench-blocks:after,
+  hr.wrench-promo:after,
   hr.wrench:after {
     font-size: 2em;
   }
